@@ -6,7 +6,6 @@ var app = express();
 app.set('port', process.env.PORT || 8080);
 
 app.get('/', (req, res) => {
-  console.log(req.headers);
   const headerObj = req.headers;
   const ipAddress = headerObj['x-forwarded-for'];
   const language = headerObj['accept-language'].substr(0, headerObj['accept-language'].indexOf(',', 0));
